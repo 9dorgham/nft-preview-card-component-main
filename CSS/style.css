@@ -5,12 +5,11 @@
     font-family: 'Outfit', sans-serif;
 }
 :root {
-    --c: hsl(178, 100%, 50%);
-    --main: hsl(215, 51%, 70%);
-    --bg: hsl(217, 54%, 11%);
-    --card: hsl(216, 50%, 16%);
+    --v: rgb(255, 0, 255);
+    --dv: rgb(196, 15, 196);
+    --font: hsl(217, 54%, 11%);
     --line: hsl(215, 32%, 27%);
-    --smoke: 2px 2px 20px 5px rgb(0, 0, 0, 0.2);
+    --smoke: 2px 2px 10px inset rgba(0, 0, 0, 0.25)
 }
 .icon {
     width: 1em;
@@ -22,8 +21,10 @@
     font-size: 16px;
 }
 body {
-    background-color: var(--bg);
-    color: var(--main);
+    height: 100vh;
+    background-image: conic-gradient(red,blue);
+    background-repeat: no-repeat;
+    color: var(--font);
 }
 
 /* Figure */
@@ -33,10 +34,11 @@ figure {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 20em;
-    background-color: var(--card);
+    background-color: #fff;
     border-radius: 1em;
-    box-shadow: var(--smoke);
+    border: 1px solid var(--font);
     padding: 1.5em;
+    box-shadow: var(--smoke);
     display: flex;
     flex-direction: column;
 }
@@ -58,8 +60,8 @@ figure .box::before {
 figure .box::after {
     content: '';
     width: 100%;
-    height: calc(100% - 5px);
-    background-color: var(--c);
+    height: calc(100% - 4px);
+    background-color: var(--v);
     position: absolute;
     top: 0%;
     left: 0%;
@@ -90,7 +92,8 @@ figcaption > *:not(.foot) {
     justify-content: space-between;
 }
 .eth {
-    color: var(--c);
+    color: var(--v);
+    font-weight: 500;
 }
 .hr {
     height: 1px;
@@ -111,7 +114,7 @@ figcaption > *:not(.foot) {
     margin-left: 20px;
 }
 a {
-    color: #fff;
+    color: var(--font);
     text-decoration: none;
 }
 
@@ -123,8 +126,13 @@ a {
     cursor: pointer;
     display: block;
 }
+a {
+    color: var(--v);
+    font-weight: 500;
+}
 a:hover {
-    color: var(--c);
+    color: var(--dv);
+    font-weight: 600;
 }
 
 /* Font */
