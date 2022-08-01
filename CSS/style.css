@@ -22,8 +22,7 @@
 }
 body {
     height: 100vh;
-    background-image: conic-gradient(red,blue);
-    background-repeat: no-repeat;
+    background: conic-gradient(red,blue) no-repeat;
     color: var(--font);
 }
 
