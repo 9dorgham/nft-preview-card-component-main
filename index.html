@@ -1,31 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | NFT preview card component</title>
-  <link rel="stylesheet" href="CSS/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./CSS/style.css">
+  <link rel="preload" href="./Font/Outfit/Outfit-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin/>
 </head>
 
 <body>
-  <div class="card">
     <figure>
-      <img src="Images/image-equilibrium.jpg" alt="Error">
-      <div class="ivs-bg"></div>
-      <figcaption><a href="#" class="link">Equilibrium #3429</a></figcaption>
+      <div class="box"><img src="./images/image-equilibrium.jpg" alt=""></div>
+      <figcaption>
+        <p><a href="#" class="link">Equilibrium #3429</a></p>
+        <p class="thin">Our Equilibrium collection promotes balance and calm.</p>
+        <div class="info">
+          <div class="eth thin">
+            <svg class="icon">
+              <use href="./images/icon-ethereum.svg#eth"/>
+            </svg>
+            0.041 ETH
+          </div>
+          <div class="clock thin">
+            <svg class="icon">
+              <use href="./images/icon-clock.svg#clk"/>
+            </svg>
+            3 days left
+          </div>
+        </div>
+        <div class="hr"></div>
+        <div class="foot">
+          <img src="./images/image-avatar.png" alt="">
+          <p class="thin">Creation of <a href="#">Jules Wyvern</a></p>
+        </div>
+      </figcaption>
     </figure>
-    <p>Our Equilibrium collection promotes balance and calm.</p>
-    <div class="eth">0.041 ETH</div>
-    <div class="clock">3 days left</div>
-    <div class="hr"></div>
-    <figure>
-      <img src="images/image-avatar.png" alt="Avater">
-      <figcaption>Creation of <a href="#" class="link">Jules Wyvern</a></figcaption>
-    </figure>
-  </div>
 </body>
 
 </html>

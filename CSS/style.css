@@ -1,100 +1,134 @@
 * {
     margin: 0%;
+    padding: 0%;
     box-sizing: border-box;
-}
-body {
-    background-color: hsl(217, 54%, 11%);
-    color: hsl(215, 51%, 70%);
     font-family: 'Outfit', sans-serif;
 }
-.card {
-    background-color: hsl(216, 50%, 16%);
-    border-radius: 20px;
-    padding: 20px;
+:root {
+    --c: hsl(178, 100%, 50%);
+    --main: hsl(215, 51%, 70%);
+    --bg: hsl(217, 54%, 11%);
+    --card: hsl(216, 50%, 16%);
+    --line: hsl(215, 32%, 27%);
+    --smoke: 2px 2px 20px 5px rgb(0, 0, 0, 0.2);
+}
+.icon {
+    width: 1em;
+    height: 1em;
+    transform: translateY(10%);
+}
+.thin {
+    font-weight: 300;
+    font-size: 16px;
+}
+body {
+    background-color: var(--bg);
+    color: var(--main);
+}
+
+/* Figure */
+figure {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: grid;
-    grid-template-columns: 150px 100px;
-    grid-template-rows: repeat(5, auto);
-    row-gap: 10px;
-    box-shadow: 1px 1px 10px 5px rgb(0, 0, 0, .2);
+    width: 20em;
+    background-color: var(--card);
+    border-radius: 1em;
+    box-shadow: var(--smoke);
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
 }
-figure:first-of-type {
-    grid-area: 1 / 1 / 2 / 3;
-}
-figure:first-of-type img {
-    width: 250px;
-    height: 250px;
-    border-radius: 10px;
-    position: absolute;
-}
-.ivs-bg {
-    width: 250px;
-    height: 250px;
-    border-radius: 10px;
-    background-color: cyan;
-    opacity: .6;
+figure .box {
     position: relative;
-    visibility: hidden;
 }
-.ivs-bg::before {
-    content: url("../images/icon-view.svg");
+figure .box::before {
+    content: '';
+    width: 3em;
+    height: 2em;
+    background: url("../images/icon-view.svg") no-repeat center;
     position: absolute;
-    left: 50%;
     top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 999;
+    display: none;
 }
-figure:first-of-type:hover .ivs-bg {
-    visibility: visible;
-    cursor: pointer;
+figure .box::after {
+    content: '';
+    width: 100%;
+    height: calc(100% - 5px);
+    background-color: var(--c);
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    opacity: 0.5;
+    border-radius: 0.5em;
+    display: none;
 }
-figure:first-of-type figcaption {
-    margin-top: 20px;
+figure .box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5em;
+    position: relative;
+}
+
+/* FigC */
+figcaption {
+    margin-top: 1em;
+    line-height: 1.5;
+    max-inline-size: 35ch;
     font-size: 18px;
 }
-p {
-    grid-area: 2 / 1 / 3 / 3;
+figcaption > *:not(.foot) {
+    margin-bottom: 1em;
+}
+.info {
+    display: flex;
+    justify-content: space-between;
 }
 .eth {
-    grid-area: 3 / 1 / 4 / 2;
-    color: cyan;
-}
-.eth::before {
-    content: url("../images/icon-ethereum.svg");
-    margin-right: 5px;
-}
-.clock {
-    grid-area: 3 / 2 / 4 / 3;
-}
-.clock::before {
-    content: url("../images/icon-clock.svg");
-    margin-right: 5px;
+    color: var(--c);
 }
 .hr {
-    grid-area: 4 / 1 / 5 / 3;
     height: 1px;
-    background-color: #fff;
+    background-color: var(--line);
 }
-figure:last-of-type {
-    grid-area: 5 / 1 / 6 / 3;
+.foot {
     display: flex;
     align-items: center;
 }
-figure:last-of-type img {
+.foot img {
     width: 30px;
     height: 30px;
     border-radius: 50%;
     border: 1px solid #ccc;
+    margin-right: 1em;
 }
-figure:last-of-type figcaption {
+.foot figcaption {
     margin-left: 20px;
 }
-.link {
+a {
     color: #fff;
     text-decoration: none;
 }
-.link:hover {
-    color: cyan;
+
+
+/* Event */
+.box:hover,
+.box:hover::before,
+.box:hover::after {
+    cursor: pointer;
+    display: block;
+}
+a:hover {
+    color: var(--c);
+}
+
+/* Font */
+@font-face {
+    font-family: 'Outfit';
+    src: url('../Font/Outfit/Outfit-VariableFont_wght.ttf');
 }
